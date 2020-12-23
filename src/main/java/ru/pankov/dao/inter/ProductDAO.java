@@ -1,6 +1,6 @@
-package dao;
+package ru.pankov.dao.inter;
 
-import entity.Product;
+import ru.pankov.entity.Product;
 
 import java.util.List;
 
