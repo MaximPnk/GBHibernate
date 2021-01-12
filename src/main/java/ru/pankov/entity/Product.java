@@ -1,4 +1,4 @@
-package entity;
+package ru.pankov.entity;
 
 import lombok.*;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "products")
+@Table(name = "product")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -24,9 +24,13 @@ public class Product {
     @Column(name = "price")
     private BigDecimal price;
 
-    public Product(String name, BigDecimal price) {
+    @Column(name = "count")
+    private int count;
+
+    public Product(String name, BigDecimal price, int count) {
         this.name = name;
         this.price = price;
+        this.count = count;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
+                ", count=" + count +
                 '}';
     }
 }
